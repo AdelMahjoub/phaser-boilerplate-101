@@ -1,0 +1,160 @@
+{
+	"assets": [
+		{ "key": "bg_yellow", "type": "image", "url": "assets/images/backgrounds/bg_yellow.png" },
+		{ "key": "bg_green", "type": "image", "url": "assets/images/backgrounds/bg_green.png" },
+		{ "key": "bg_blue", "type": "image", "url": "assets/images/backgrounds/bg_blue.png" },
+		{ "key": "bg_orange", "type": "image", "url": "assets/images/backgrounds/bg_orange.png" },
+		{ "key": "bg_grey", "type": "image", "url": "assets/images/backgrounds/bg_grey.png" },
+		{ "key": "panel", "type": "image", "url": "assets/images/panel.png" },
+		{ "key": "sfx_btn_click", "type": "audio", "url": "assets/audio/sfx/btn_click.ogg" },
+		{ "key": "sfx_btn_over", "type": "audio", "url": "assets/audio/sfx/btn_over.ogg" },
+		{ "key": "sfx_btn_switch", "type": "audio", "url": "assets/audio/sfx/btn_switch.ogg" },
+		{ "key": "btn_start", "type": "spritesheet", "url": "assets/images/spritesheets/start_btn.png", "frameWidth": 190, "frameHeight": 50 },
+		{ "key": "btn_settings", "type": "spritesheet", "url": "assets/images/spritesheets/settings_btn.png", "frameWidth": 190, "frameHeight": 32 },
+		{ "key": "btn_credits", "type": "spritesheet", "url": "assets/images/spritesheets/credits_btn.png", "frameWidth": 190, "frameHeight": 32 },
+		{ "key": "icon_cross", "type": "image", "url": "assets/images/cross_icon.png"}
+	],
+	"groups": ["background", "text", "menu", "ui"],
+	"prefabs": {
+		"background": {
+			"type": "image",
+			"position": {"x": 0, "y": 0},
+			"properties": {
+				"texture": "bg_yellow",
+				"scale": {"x": 1, "y": 1},
+				"anchor": {"x": 0, "y": 0},
+				"group": "background"
+			}
+		},
+		"title": {
+			"type": "text",
+			"position": {"x": 320, "y": 80},
+			"properties": {
+				"text": "Phaser Game",
+				"scale": {"x": 1, "y": 1},
+				"anchor": {"x": 0.5, "y": 0.5},
+				"style": {
+					"font": "40px kenvector",
+					"fill": "#000000"
+				},
+				"group": "text"
+			}
+		},
+		"panel": {
+			"type": "image",
+			"position": {"x": 135, "y": 25},
+			"properties": {
+				"texture": "panel",
+				"scale": {"x": 1, "y": 1},
+				"anchor": {"x": 0, "y": 0},
+				"group": "ui"
+			}
+		},
+		"settingsPanelLabel": {
+			"type": "text",
+			"position": {"x": 150, "y": 43},
+			"properties": {
+				"text": "settings",
+				"scale": {"x": 1, "y": 1},
+				"anchor": {"x": 0, "y": 0},
+				"style": {
+					"font": "18px kenvector",
+					"fill": "#d6dde7ff"
+				},
+				"group": "ui"
+			}
+		},
+		"creditsPanelLabel": {
+			"type": "text",
+			"position": {"x": 150, "y": 43},
+			"properties": {
+				"text": "credits",
+				"scale": {"x": 1, "y": 1},
+				"anchor": {"x": 0, "y": 0},
+				"style": {
+					"font": "18px kenvector",
+					"fill": "#d6dde7ff"
+				},
+				"group": "ui"
+			}
+		},
+		"closeBtn": {
+			"type": "button",
+			"position": {"x": 498, "y": 32},
+			"properties": {
+				"texture": "icon_cross",
+				"anchor": {"x": 0.5, "y": 0.5},
+				"scale": {"x": 0.4, "y": 0.4},
+				"callback": "__closePanel",
+				"group": "ui"
+			}
+		},
+		"startBtn": {
+			"type": "button",
+			"position": {"x": 320, "y": 180},
+			"properties": {
+				"texture": "btn_start",
+				"anchor": {"x": 0.5, "y": 0.5},
+				"scale": {"x": 1, "y": 1},
+				"frames": {
+					"over": 1,
+					"out":  2,
+					"down": 0,
+					"up": 2
+				},
+				"callback": "__start",
+				"group": "menu"
+			}
+		},
+		"settingsBtn": {
+			"type": "button",
+			"position": {"x": 320, "y": 240},
+			"properties": {
+				"texture": "btn_settings",
+				"anchor": {"x": 0.5, "y": 0.5},
+				"scale": {"x": 1, "y": 1},
+				"frames": {
+					"over": 1,
+					"out":  2,
+					"down": 0,
+					"up": 2
+				},
+				"callback": "__settings",
+				"group": "menu"
+			}
+		},
+		"creditsBtn": {
+			"type": "button",
+			"position": {"x": 320, "y": 280},
+			"properties": {
+				"texture": "btn_credits",
+				"anchor": {"x": 0.5, "y": 0.5},
+				"scale": {"x": 1, "y": 1},
+				"frames": {
+					"over": 1,
+					"out":  2,
+					"down": 0,
+					"up": 2
+				},
+				"callback": "__credits",
+				"group": "menu"
+			}
+		},
+		"helpBtn": {},
+		"sfxBtnClick": {
+			"type": "audio",
+			"position": null,
+			"properties": {"key": "sfx_btn_click", "volume": 1, "loop": false, "connect": true}
+		},
+		"sfxBtnOver": {
+			"type": "audio",
+			"position": null,
+			"properties": {"key": "sfx_btn_over", "volume": 1, "loop": false, "connect": true}
+		},
+		"sfxBtnSwitch": {
+			"type": "audio",
+			"position": null,
+			"properties": {"key": "sfx_btn_switch", "volume": 1, "loop": false, "connect": true}
+		}
+	}
+}
